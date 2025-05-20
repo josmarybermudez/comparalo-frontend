@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -7,6 +8,17 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 
 module.exports = {
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@assets": path.resolve(__dirname, "./assets"),
+    };
+    return config;
+  },
+  images: {
+    domains: ["static.nationalgeographic.es"],
+    formats: ["image/avif", "image/webp"],
+  },
   async rewrites() {
     return [
       {

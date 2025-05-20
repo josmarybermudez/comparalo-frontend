@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
 import { Routes } from "constants/Routes";
 
 export type LoginObject = {
-  email: string;
+  email: string; // todo Agregar validación de mail real - investigar
   emailError: boolean;
   password: string;
   passwordError: boolean;

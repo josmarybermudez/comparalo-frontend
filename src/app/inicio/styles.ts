@@ -1,18 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { Button, FormControl, TextField } from "@mui/material";
-
-const greenLight = "#ccfed8";
-const purpleLight = "#96baff";
-// const red = "#bf4f74";
+import { Palette } from "constants/Palette";
 
 export const Container = styled.div`
-  height: 100vh;
   display: flex;
+  gap: 20px;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(${greenLight}, ${purpleLight});
+  background: linear-gradient(${Palette.AccentLight}, ${Palette.Secondary});
+  position: absolute;
 `;
 
 export const ImageLogo = styled(Image)`
@@ -50,14 +46,14 @@ export const StyledButton = styled(Button)`
   border-radius: 20px;
   text-transform: capitalize;
   border: none;
-  background-color: #5171ff;
+  background-color: ${Palette.Primary};
 
   &.secondary {
     background-color: green;
   }
 
   &:hover {
-    background-color: rgb(59, 78, 159);
+    background-color: ${Palette.PrimaryDark};
   }
 
   &.Mui-disabled {
@@ -109,7 +105,7 @@ export const HelperButton = styled.button`
   border: none;
 
   &.secondary {
-    background-color: #5171ff;
+    background-color: ${Palette.Primary};
   }
 `;
 
