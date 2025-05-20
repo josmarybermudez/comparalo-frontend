@@ -1,16 +1,15 @@
 "use client";
 
-import { Container, ImageLogo } from "./styles";
-import LogoSVG from "../../../public/logo_comparalo.svg";
+import { Container } from "./styles";
+import { Topbar } from "app/components/topbar/Topbar";
+import ResultsTable from "@app/components/results-table/ResultsTable";
 
 export default function Page() {
   return (
     <Container>
-      <ImageLogo
-        src={LogoSVG}
-        alt="comparalo - mejores precios, un solo lugar"
-      />
-      Inicio
+      <Topbar />
+      <p>Inicio</p>
+      <ResultsTable />
     </Container>
   );
 }
